@@ -1,0 +1,12 @@
+SE_ML_Model/
+│
+├── static/
+│   ├── css/
+│   │   ├── styles.css
+│   │   ├── bg.gif
+│
+├── templates/
+│   ├── index.html
+│
+├── app.py
+├── model.py

@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: url('../css/bg.gif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3em; /* Main heading size */
+    color: #000000;
+    text-align: center;
+    word-wrap: break-word;
+    margin-bottom: 15px; /* Add some spacing below the main heading */
+}
+
+h2 {
+    font-family: 'Lora', serif; /* Use the new font */
+    font-size: 2.2em; /* Adjust font size */
+    color: #333; /* Adjust text color if needed */
+    text-align: center; /* Ensure the tagline is centered */
+    margin-bottom: 15px; /* Add some spacing below the tagline */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Restrict the container width */
+    min-height: 80vh;
+    padding: 5%;
+    background: rgba(255, 255, 255, 0.2); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent overflow */
+}
+
+.text {
+    text-align: end;
+    font-family: 'Lora', serif; /* Use the new font */
+    font-size: 1.2em; /* Adjust font size */
+    color: #333; /* Adjust text color if needed */
+    margin-bottom: 10px; /* Add space below the text */
+}
+
+.symptoms {
+    background: transparent;
+    color: #050200;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    border-radius: 30px;
+}
+
+.symptoms::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.symptoms:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding-left: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent overflow */
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    border-radius: 30px;
+    font-size: 1em; /* Body text size */
+}
+
+.search-bar input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.search-bar button {
+    position: relative;
+    left: -3%;
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #4DB6AC;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .fas {
+    color: #ffffff;
+}
+
+.search-bar.minimized {
+    justify-content: center;
+    padding-left: 0;
+}
+
+.search-bar.minimized input,
+.search-bar.minimized button {
+    display: none;
+}
+
+.search-bar.minimized .search-icon {
+    display: block;
+    font-size: 24px;
+}
+
+.submit:hover {
+    background: #4DB6AC;
+    color: white;
+}
+
+.result-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align the cards */
+}
+
+.result-container h2 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 2em; /* Card heading size */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 30%;
+    background: rgba(187, 222, 251, 0.2); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px; /* Added space between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    font-size: 1em; /* Body text size */
+}
+
+.card.half-width {
+    width: 45%; /* Adjusted width for fewer cards */
+}
+
+.card.full-width {
+    width: 100%; /* Full width for a single card */
+}
+
+.card h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5em; /* Subheading size */
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.check-other {
+    display: block;
+    width: 35%;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    background: #4DB6AC;
+    padding: 10px;
+    border-radius: 45px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.25em; /* Slightly larger for emphasis */
+}
+
+.check-other:hover {
+    background: #4DB6AC;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+
+    .search-bar {
+        max-width: 60px;
+        padding: 10px;
+    }
+
+    .search-bar.minimized {
+        display: flex;
+    }
+}

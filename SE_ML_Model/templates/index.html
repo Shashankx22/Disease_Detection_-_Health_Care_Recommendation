@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Checker</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function hideTagline() {
+                document.getElementById('tagline').style.display = 'none';
+            }
+
+            function showTagline() {
+                document.getElementById('tagline').style.display = 'block';
+            }
+
+            // Hide tagline on form submit
+            document.querySelector('.search-bar').addEventListener('submit', function(event) {
+                hideTagline();
+            });
+
+            // Show tagline on "Check another" click
+            document.querySelectorAll('.check-other').forEach(function(element) {
+                element.addEventListener('click', function(event) {
+                    showTagline();
+                });
+            });
+        });
+    </script>
+    <style>
+        /* Your provided CSS here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>DISEASE DETECTION AND HEALTHCARE RECOMMENDATION</b></h1>
+        <h2 id="tagline">"Your Path to Early Detection and Optimal Care"</h2>
+        <form class="search-bar" method="POST">
+            <label for="symptoms" class="text"> Enter your symptoms :  </label><br>
+            <input type="text" id="symptoms" class="symptoms" name="symptoms" placeholder="fever, sneezing, runny nose" required><br><br>
+            <button type="submit" class="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+
+        {% if details %}
+        <div class="result-container">
+            <h2>Prediction Result</h2>
+            <div class="card">
+                <h3>Entered Symptoms</h3>
+                <p>{{ details['Symptoms'] }}</p>
+            </div>
+            {% if details['Disease'] == 'Symptom not available' %}
+                <div class="card">
+                    <h3>No Results</h3>
+                    <p>No disease found for symptom {{ details['Symptoms'] }}. Please try different symptoms.</p>
+                </div>
+            {% else %}
+                <div class="card">
+                    <h3>Predicted Disease</h3>
+                    <p>{{ details['Disease'] }}</p>
+                </div>
+                <div class="card">
+                    <h3>Cure</h3>
+                    <p>{{ details['Cure'] }}</p>
+                </div>
+                <div class="card">
+                    <h3>Doctor</h3>
+                    <p>{{ details['Doctor'] }}</p>
+                </div>
+                <div class="card">
+                    <h3>Risk</h3>
+                    <p>{{ details['Risk'] }}</p>
+                </div>
+                <div class="card">
+                    <h3>Probability</h3>
+                    <p>{{ details['Probability'] }}</p>
+                </div>
+            {% endif %}
+            <a href="/" class="check-other">Check another</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
