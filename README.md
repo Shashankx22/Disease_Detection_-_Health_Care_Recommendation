@@ -13,15 +13,15 @@ Responsive Design: The user interface is designed to be responsive and user-frie
 
 Project Structure
 SE_ML_Model/
-├── static/
-│   ├── css/
-│   │   ├── styles.css
-│   │   ├── bg.gif
-├── templates/
-│   ├── index.html
-├── app.py
-├── model.py
-├── dataset.csv
+     static/
+        css/
+          styles.css  
+          bg.gif
+     templates/
+         index.html
+     app.py
+     model.py
+     dataset.csv
 
 
 static/: Contains static files like CSS and background images.
