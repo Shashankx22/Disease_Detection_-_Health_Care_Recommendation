@@ -58,4 +58,29 @@ model.py: Contains the machine learning model and related functions.<br />
 
 dataset.csv: The dataset used to train the machine learning model.<br />
 
+
+Requirements
+To run this project, you need:
+
+Python 3.x installed on your machine.
+Flask, a web framework for Python.
+Pandas for handling the dataset.
+Scikit-learn (or another machine learning library) for model training and predictions.
+
+
+How to Run
+Download the repository to your local machine.
+
+Ensure you have the necessary Python packages installed. These include Flask for running the web application, Pandas for dataset handling, and Scikit-learn for machine learning tasks. You may manually install these if they are not already available.
+
+Run the application by executing the app.py file. Make sure your Python environment is properly set up.
+
+Open your browser and navigate to the link provided after running the app.py file. Typically, the application will be hosted on:
+
+http://127.0.0.1:5000/
+
+Start using the web app by entering symptoms, and the system will predict possible diseases and offer healthcare recommendations.
+
+
+
  
